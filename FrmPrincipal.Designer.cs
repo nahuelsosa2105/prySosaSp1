@@ -32,6 +32,7 @@
             this.BtnLeer = new System.Windows.Forms.Button();
             this.TxtDatos = new System.Windows.Forms.TextBox();
             this.BtnGrabar = new System.Windows.Forms.Button();
+            this.BtnLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnCrear
@@ -72,11 +73,22 @@
             this.BtnGrabar.UseVisualStyleBackColor = true;
             this.BtnGrabar.Click += new System.EventHandler(this.BtnGrabar_Click);
             // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.Location = new System.Drawing.Point(29, 140);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(133, 45);
+            this.BtnLimpiar.TabIndex = 4;
+            this.BtnLimpiar.Text = "Limpiar Txt";
+            this.BtnLimpiar.UseVisualStyleBackColor = true;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 291);
+            this.Controls.Add(this.BtnLimpiar);
             this.Controls.Add(this.BtnGrabar);
             this.Controls.Add(this.TxtDatos);
             this.Controls.Add(this.BtnLeer);
@@ -95,6 +107,7 @@
         private System.Windows.Forms.Button BtnLeer;
         private System.Windows.Forms.TextBox TxtDatos;
         private System.Windows.Forms.Button BtnGrabar;
+        private System.Windows.Forms.Button BtnLimpiar;
     }
 }
 

@@ -23,7 +23,7 @@ namespace prySosaSp1
         {
             try
             {
-                StreamWriter sw = new StreamWriter("MiArchivo", false);
+                StreamWriter swCrearArchivo = new StreamWriter("MiArchivo", false);
 
                 MessageBox.Show("Archivo Creado");
             }
@@ -37,7 +37,12 @@ namespace prySosaSp1
 
         private void BtnLeer_Click(object sender, EventArgs e)
         {
-
+            StreamReader srManejoDeArchivo = new StreamReader("MiArchivo");
+            while (srManejoDeArchivo.EndOfStream == false)
+            {
+                TxtDatos.Text += srManejoDeArchivo.ReadLine() + Environment.NewLine;
+            }
+            srManejoDeArchivo.Close();
         }
 
         private void BtnGrabar_Click(object sender, EventArgs e)
@@ -52,11 +57,17 @@ namespace prySosaSp1
                 TxtDatos.Text = "";
                 TxtDatos.Focus();
             }
-            catch (Exception)
+            catch (Exception Ex)
             {
 
-                MessageBox.Show("Error Al grabar");
+                MessageBox.Show("Error Al grabar" + Ex.Message);
+                TxtDatos.Text = "";
             }
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            TxtDatos.Clear();
         }
     }
 }
